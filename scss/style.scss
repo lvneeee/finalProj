@@ -38,7 +38,7 @@ ion-icon {
     &::after {
         content: '';
         position: absolute;
-        top: -6px;
+        top: -4px;
         right: 0;
         width: 100%;
         height: 2px;
@@ -161,19 +161,20 @@ ion-icon {
             .nav_item {
                 display: inline-block;
                 .nav_link {
-                    display: block;
                     ion-icon {
                         margin-left: 5px;
                     }
+                    @extend .border_animation
                 }
             }
             .has_mega {
+                position: relative;
                 .mega_content {
                     z-index: 999;
                     position: absolute;
                     width: 1300px;
                     left: 50%;
-                    top: 100%;
+                    top: 140%;
                     transform: translate(-50%, 0);
                     background-color: #ebebebcb;
                     display: none;
@@ -195,9 +196,24 @@ ion-icon {
                 .dropdown_menu {
                     z-index: 999;
                     position: absolute;
-                    top: 100%;
-                    left: 0;
+                    top: 140%;
+                    left: -0.5rem;
+                    margin-top: 0.5rem;
+                    padding: 0.5rem;
+                    background-color: #ebebebcb;
+                    // line-height: 2.5rem;
                     // display: none;
+                    .dropdown_item {
+                        line-height: 2.5rem;
+                        margin: 0;
+                        padding: 0;
+                        a {
+                            @extend .border_animation;
+                        }
+                    }
+                    .dropend {
+                        display: none;
+                    }
                 }
             }
         }

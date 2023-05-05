@@ -26,7 +26,7 @@ let timer;
 $('.has_mega').hover(
     function() {
         clearTimeout(timer);
-        $('.mega_content').show('slow');
+        $('.mega_content').show(200);
     },
     function() {
         timer = setTimeout(function() {
@@ -63,17 +63,3 @@ document.addEventListener( 'DOMContentLoaded', function () {
     })
     splide.mount()
 } );
-
-
-    // Lấy đối tượng dropdown và nút kích hoạt dropdown
-    var dropdown = $('#my-dropdown');
-    var dropdownButton = dropdown.find('.dropdown-toggle');
-
-    // Thêm sự kiện hover vào và hover ra khỏi nút kích hoạt dropdown
-    dropdownButton.hover(function() {
-      dropdown.addClass('show');
-      dropdownButton.attr('aria-expanded', 'true');
-    }, function() {
-      dropdown.removeClass('show');
-      dropdownButton.attr('aria-expanded', 'false');
-    });
