@@ -1,4 +1,14 @@
-//! font size
+// font family
+@font-face {
+    font-family: 'Baunk Typeface';
+    src: url(../font/BAUNK/Baunk.otf), url(../font/BAUNK/Baunk.ttf), url(../font/BAUNK/Baunk.woff)
+}
+
+$font-fam1: 'Chakra Petch', sans-serif;
+$font-fam2: 'Poppins', sans-serif;
+$font-fam3: 'Baunk Typeface', sans-serif;
+
+// font size
 $font-size-xl1: 2rem;
 $font-size-xl2: 3rem;
 $font-size-xl3: 4rem;
@@ -8,10 +18,12 @@ $font-size-md3: 1.5rem;
 $font-size-sm1: 0.5rem;
 $font-size-sm2: 0.75rem;
 
-//! font family
-$font-fam1: 'Chakra Petch', sans-serif;
-$font-fam2: 'Josefin Sans', sans-serif;
-$font-fam3: 'Poppins', sans-serif;
-
-//! color
-// $--color-prime: 
+// color
+$color-red: rgb(133, 0, 0);
+$color-green: rgb(17, 67, 33);
+$color-dark-1: rgb(0, 0, 0);
+$color-dark-2: rgb(34, 34, 34);
+$color-light-1: rgb(235, 235, 235);
+$color-light-2: rgb(209, 208, 208);
+$color-light-1-o80: rgba(235, 235, 235, 0.8);
+$color-red-o80: rgba(133, 0, 0, 0.8);
