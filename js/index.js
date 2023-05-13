@@ -106,6 +106,26 @@ $(document).ready(function() {
         }
     },200)
 
+    const collection = document.getElementById('new_collection_animation');
+    let lines2 = [
+        'MICHT', 'LA FEMME Collection'
+    ]
+    setInterval(() => {
+        if(wait-- > 0) return;
+        if(wait == -1) {
+            collection.innerHTML = '';
+        };
+        if(i < lines2.length) {
+            if(j < lines2[i].length) {
+                collection.innerHTML += lines2[i][j++];
+            } else {
+                wait = 8, j = 0, i++;
+            }
+        } else {
+            wait = 8, j = 0, i = 0;
+        }
+    },200)
+
     // splide
     var splide = new Splide('#image_carousel', {
         type: 'loop',

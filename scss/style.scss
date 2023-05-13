@@ -114,7 +114,6 @@ ion-icon {
                             position: absolute;
                             top: 0;
                             right: 0;
-                            background-color: var(--bs-red);
                             border-radius: 50%;
                             display: none;
                             width: 10px;
@@ -341,6 +340,23 @@ ion-icon {
             }
             .banner_2 { 
                 grid-area: 1 / 5 / 3 / 9; 
+                background: $color-dark-1;
+                width: 100%;
+                #new_collection_animation {
+                    font: 500 $font-size-xl1 $font-fam3;
+                    background-color: $color-dark-1;
+                    color: $color-green;
+                    text-shadow: .01em .01em .2em $color-green;
+                    &::after {
+                        content: "|";
+                        animation: blink 1s step-end infinite;
+                    }
+                    @keyframes blink {
+                        50% {
+                            opacity: 0;
+                        }
+                    }
+                }
             }
         }
     }
