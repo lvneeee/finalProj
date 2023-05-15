@@ -66,7 +66,8 @@ ion-icon {
   width: 100%;
   background-color: transparent;
   font-family: "Chakra Petch", sans-serif;
-  padding-bottom: 1rem; }
+  padding-bottom: 1rem;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75); }
   .header a {
     color: #ebebeb; }
   .header .container-fluid .row_top {
@@ -105,7 +106,6 @@ ion-icon {
         position: absolute;
         top: 0;
         right: 0;
-        background-color: var(--bs-red);
         border-radius: 50%;
         display: none;
         width: 10px;
@@ -309,23 +309,47 @@ ion-icon {
     .section_2 .wrapper .d-grid .card_8 {
       grid-area: 7 / 7 / 11 / 9; }
     .section_2 .wrapper .d-grid .banner_1 {
-      grid-area: 9 / 1 / 11 / 5;
+      grid-area: 9 / 1 / 11 / 5; }
+    .section_2 .wrapper .d-grid .banner_2 {
+      grid-area: 1 / 5 / 3 / 9; }
+    .section_2 .wrapper .d-grid .cards {
+      width: 200px;
+      height: 250px;
+      perspective: 800px; }
+      .section_2 .wrapper .d-grid .cards .card_inner {
+        position: relative;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.5s; }
+        .section_2 .wrapper .d-grid .cards .card_inner:hover {
+          transform: rotateY(180deg); }
+        .section_2 .wrapper .d-grid .cards .card_inner .card_body {
+          position: absolute;
+          inset: 0;
+          display: grid;
+          place-items: center;
+          backface-visibility: hidden;
+          border-radius: 8px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); }
+        .section_2 .wrapper .d-grid .cards .card_inner .card_body_front {
+          background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 50%, #46aef7 100%); }
+        .section_2 .wrapper .d-grid .cards .card_inner .card_body_back {
+          background-image: radial-gradient(#16d9e3 0%, #30c7ec 50%, #46aef7 100%);
+          transform: rotateY(180deg); }
+    .section_2 .wrapper .d-grid .banner {
       background: black;
       width: 100%; }
-      .section_2 .wrapper .d-grid .banner_1 #brand_animation {
+      .section_2 .wrapper .d-grid .banner .blink_animation {
         font: 500 2rem "Baunk Typeface", sans-serif;
         background-color: black;
-        color: #114321;
-        text-shadow: 0.01em 0.01em 0.2em #114321; }
-        .section_2 .wrapper .d-grid .banner_1 #brand_animation::after {
+        color: #25a54d;
+        text-shadow: 0.01em 0.01em 0.2em #25a54d; }
+        .section_2 .wrapper .d-grid .banner .blink_animation::after {
           content: "|";
           animation: blink 1s step-end infinite; }
 @keyframes blink {
   50% {
     opacity: 0; } }
-    .section_2 .wrapper .d-grid .banner_2 {
-      grid-area: 1 / 5 / 3 / 9; }
-
 .section_3 .wrapper {
   background-color: #fff;
   padding: 1rem 0;

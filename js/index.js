@@ -85,46 +85,24 @@ $(document).ready(function() {
     });
 
     // animate section_2
-    const micht = document.getElementById('brand_animation');
-    let lines = [
-        'MICHT', 'Extreme Generation'
-    ]
-    let i = 0, j = 0, wait = 6;
-    setInterval(() => {
-        if(wait-- > 0) return;
-        if(wait == -1) {
-            micht.innerHTML = '';
-        };
-        if(i < lines.length) {
-            if(j < lines[i].length) {
-                micht.innerHTML += lines[i][j++];
-            } else {
-                wait = 8, j = 0, i++;
-            }
-        } else {
-            wait = 8, j = 0, i = 0;
-        }
-    },200)
-
-    const collection = document.getElementById('new_collection_animation');
-    let lines2 = [
-        'MICHT', 'LA FEMME Collection'
-    ]
-    setInterval(() => {
-        if(wait-- > 0) return;
-        if(wait == -1) {
-            collection.innerHTML = '';
-        };
-        if(i < lines2.length) {
-            if(j < lines2[i].length) {
-                collection.innerHTML += lines2[i][j++];
-            } else {
-                wait = 8, j = 0, i++;
-            }
-        } else {
-            wait = 8, j = 0, i = 0;
-        }
-    },200)
+    function animateText(bannerId, textLines, waitTime) {
+        const banner = document.getElementById(bannerId);
+        let i = 0, j = 0, wait = waitTime;
+        setInterval(() => {
+            if(wait-- > 0) return;
+            if(wait == -1) banner.innerHTML = '';
+            if(i < textLines.length) {
+                if(j < textLines[i].length) {
+                    banner.innerHTML += textLines[i][j++];
+                } else {
+                    wait = 8, j = 0, i++;
+                }
+            } else wait = 8, j = 0, i = 0;
+        }, 200);
+    }
+    
+    animateText('brand_animation', ['MICHT', 'Extreme Generation'], 6);
+    animateText('new_collection_animation', ['LA FEMME Collection', 'Coming soon...'], 6);
 
     // splide
     var splide = new Splide('#image_carousel', {

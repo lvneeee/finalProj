@@ -320,29 +320,49 @@ ion-icon {
             }
             .banner_1 { 
                 grid-area: 9 / 1 / 11 / 5;
-                background: $color-dark-1;
-                width: 100%;
-                #brand_animation {
-                    font: 500 $font-size-xl1 $font-fam3;
-                    background-color: $color-dark-1;
-                    color: $color-green;
-                    text-shadow: .01em .01em .2em $color-green;
-                    &::after {
-                        content: "|";
-                        animation: blink 1s step-end infinite;
-                    }
-                    @keyframes blink {
-                        50% {
-                            opacity: 0;
-                        }
-                    }
-                }
             }
             .banner_2 { 
                 grid-area: 1 / 5 / 3 / 9; 
+            }
+            .cards {
+                width: 200px;
+                height: 250px;
+                perspective: 800px;
+                .card_inner {
+                    position: relative;
+                    height: 100%;
+                    transform-style: preserve-3d;
+                    transition: transform 0.5s;
+                    &:hover {
+                        transform: rotateY(180deg);
+                    }
+                    .card_body {
+                        position: absolute;
+                        inset: 0;
+                        display: grid;
+                        place-items: center;
+                        backface-visibility: hidden;
+                        border-radius: 8px;
+                        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+                    }
+                    .card_body_front {
+                        background-image: radial-gradient(
+                        circle 248px at center,
+                        #16d9e3 0%, #30c7ec 50%,
+                        #46aef7 100%);
+                    }
+                    .card_body_back {
+                        background-image: radial-gradient(
+                        #16d9e3 0%, #30c7ec 50%,
+                        #46aef7 100%);
+                        transform: rotateY(180deg);
+                    }
+                }
+            }
+            .banner {
                 background: $color-dark-1;
                 width: 100%;
-                #new_collection_animation {
+                .blink_animation {
                     font: 500 $font-size-xl1 $font-fam3;
                     background-color: $color-dark-1;
                     color: $color-green;
@@ -361,6 +381,7 @@ ion-icon {
         }
     }
 }
+
 
 .section_3 {
     .wrapper {
