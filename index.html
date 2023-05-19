@@ -34,8 +34,8 @@
                 <!-- end mobile -->
                 <nav class="nav nav_main col">
 					<ul class="nav desktop_only info">
-						<li class="nav_item"><ion-icon name="location"></ion-icon><a class="nav_link" href="" title="Địa chỉ: Việt Nam">Địa chỉ: Việt Nam</a></li>						
-						<li class="nav_item"><ion-icon name="call"></ion-icon><a class="nav_link" href="tel: 0343 678 771" title="SĐT: 0343 678 771">SĐT: 0343 678 771</a></li>
+						<li class="nav_item"><ion-icon name="location"></ion-icon><a class="nav_link" href="" title="Location: Vietnam">Loc: Vietnam</a></li>						
+						<li class="nav_item"><ion-icon name="call"></ion-icon><a class="nav_link" href="tel: 0343 678 771" title="Tel: 0343 678 771">Tel: 0343 678 771</a></li>
 					</ul>
 				</nav>
                 <div class="logo_wrapper col-6">
@@ -58,14 +58,31 @@
 								</form>
 							</div>
 						</li>
-                        <li class="nav_item nav_account_item">
+                        <li class="nav_item nav_account_item" id="cart_container">
                             <a href="" class="nav_link nav_account" title="Account">Account</a>
                             <ion-icon name="person-circle-outline"></ion-icon>
 						</li>
                         <li class="nav_item nav_cart_item">
                             <a href="" class="nav_link nav_cart" title="Cart">Cart</a>
-                            <ion-icon name="cart-outline"></ion-icon>
-                            <span class="cart_count hide">0</span>
+                            <div>
+                                <ion-icon name="cart"></ion-icon>
+                                <span id="cart_count" class="cart_count hide">0</span>
+                            </div>
+                            <div class="cart_container">
+                                <ul class="cart_list" id="cart_list">
+                                </ul>
+                                <div id="cart_noti" class="empty_noti">
+                                    <p style="font-size: 1rem; text-align: center; margin: 0;">Your cart is empty</p>
+                                </div>
+                                <div id="cart_total" class="subtotal hide">
+                                    Total:
+                                    <span class="total_price"></span>
+                                </div>
+                                <div id="cart_actions" class="actions hide">
+                                    <a href="" class="checkout action_btn"><span>Checkout</span></a>
+                                    <a href="" class="view_cart ation_btn"><span>Cart</span></a>
+                                </div>
+                            </div>
 						</li>
                     </ul>
                 </nav>
@@ -143,27 +160,27 @@
                                 <div class="dropdown_item_wrapper">
                                     <a class="nav_link" href="" title="TOP">TOP <ion-icon name="chevron-forward"></ion-icon></a>
                                 </div>
-                                    <ul class='menu dropend_menu dropend_menu_1'>
+                                    <ul class="menu dropend_menu .dropend_menu_1">
                                         <li class="dropend_item"><a class="nav_link" href="" title="T-Shirt">T-Shirt</a></li>
                                         <li class="dropend_item"><a class="nav_link" href="" title="Shirt & Polo">Shirt & Polo</a></li>
                                         <li class="dropend_item"><a class="nav_link" href="" title="Hoodie & Sweatshirt">Hoodie & Sweatshirt</a></li>
                                         <li class="dropend_item"><a class="nav_link" href="" title="Jacket">Jacket</a></li>
                                     </ul>                      
                             </li>
-                            <li class="dropdown_item has_childs dropend">
+                            <li class="dropdown_item has_childs dropend dropend_2">
                                 <div class="dropdown_item_wrapper">
                                     <a class="nav_link" href="" title="BOTTOM">BOTTOM <ion-icon name="chevron-forward"></ion-icon></a>
                                 </div>
-                                    <ul class='menu dropend_menu dropend_menu_2'>
+                                    <ul class="menu dropend_menu .dropend_menu_2">
                                         <li class="dropend_item"><a class="nav_link" href="" title="Pants">Pants</a></li>
                                         <li class="dropend_item"><a class="nav_link" href="" title="Shorts">Shorts</a></li>
                                     </ul>                      
                             </li>
-                            <li class="dropdown_item has_childs dropend">
+                            <li class="dropdown_item has_childs dropend dropend_3">
                                 <div class="dropdown_item_wrapper">
                                     <a class="nav_link" href="" title="ACCESSORY">ACCESSORY <ion-icon name="chevron-forward"></ion-icon></a>
                                 </div>
-                                    <ul class='menu dropend_menu dropend_menu_3'>  
+                                    <ul class="menu dropend_menu dropend_menu_3">  
                                         <li class="dropend_item"><a class="nav_link" href="" title="Bag & Backpack">Bag & Backpack</a></li>
                                         <li class="dropend_item"><a class="nav_link" href="" title="Hat">Hat</a></li>
                                         <li class="dropend_item"><a class="nav_link" href="" title="Others">Others</a></li>
@@ -194,89 +211,121 @@
                 </div>
                 <div class="d-grid">
                         <div class="cards card_1">
-                            <div class="card_inner">
-                                <div class="card_body card_body_front">
-                                    <h2 class="card_title">front side</h2>
+                            <div class="product">
+                                <div class="image">
+                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                                 </div>
-                                <div class="card_body card_body_back">
-                                    <h2 class="card_title">back side</h2>
+                                <div class="overlay">
+                                    <button class="prduct_button add_to_cart" data-id="1" data-name="Product 1" data-price="99.99">Add to cart</button>
                                 </div>
+                            </div>
+                            <div class="product_detail">
+                                <h3 class="product_title"><a href="" title="">Title</a></h3>
+                                <p class="product_price">$99.99</p>
                             </div>
                         </div>
                         <div class="cards card_2">
-                            <div class="card_inner">
-                                <div class="card_body card_body_top">
-                                    <h2 class="card_title">front side</h2>
+                            <div class="product">
+                                <div class="image">
+                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                                 </div>
-                                <div class="card_body card_body_bottom">
-                                    <h2 class="card_title">back side</h2>
+                                <div class="overlay">
+                                    <button class="prduct_button add_to_cart" data-id="2" data-name="Product 2" data-price="99.99">Add to cart</button>
                                 </div>
-                            </div>    
+                            </div> 
+                            <div class="product_detail">
+                                <h3 class="product_title"><a href="" title="">Title</a></h3>
+                                <p class="product_price">$99.99</p>
+                            </div>
                         </div>
                         <div class="cards card_3">
-                            <div class="card_inner">
-                                <div class="card_body card_body_front">
-                                    <h2 class="card_title">front side</h2>
+                            <div class="product">
+                                <div class="image">
+                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                                 </div>
-                                <div class="card_body card_body_back">
-                                    <h2 class="card_title">back side</h2>
+                                <div class="overlay">
+                                    <button class="prduct_button add_to_cart" data-id="3" data-name="Product 3" data-price="99.99">Add to cart</button>
                                 </div>
+                            </div>
+                            <div class="product_detail">
+                                <h3 class="product_title"><a href="" title="">Title</a></h3>
+                                <p class="product_price">$99.99</p>
                             </div>
                         </div>
                         <div class="cards card_4">
-                            <div class="card_inner">
-                                <div class="card_body card_body_front">
-                                    <h2 class="card_title">front side</h2>
+                            <div class="product">
+                                <div class="image">
+                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                                 </div>
-                                <div class="card_body card_body_back">
-                                    <h2 class="card_title">back side</h2>
+                                <div class="overlay">
+                                    <button class="prduct_button add_to_cart" data-id="4" data-name="Product 4" data-price="99.99">Add to cart</button>
                                 </div>
+                            </div>
+                            <div class="product_detail">
+                                <h3 class="product_title"><a href="" title="">Title</a></h3>
+                                <p class="product_price">$99.99</p>
                             </div>
                         </div>
                         <div class="banner banner_1">
-                            <span id="brand_animation" class="blink_animation"></span>
+                            <div id="brand_animation" class="blink_animation"></div>
                         </div>
                         <div class="banner banner_2">
-                            <span id="new_collection_animation" class="blink_animation"></span>
+                            <div id="brand_animation_2" class=" blink_animation"></div>
                         </div>
                         <div class="cards card_5">
-                            <div class="card_inner">
-                                <div class="card_body card_body_front">
-                                    <h2 class="card_title">front side</h2>
+                            <div class="product">
+                                <div class="image">
+                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                                 </div>
-                                <div class="card_body card_body_back">
-                                    <h2 class="card_title">back side</h2>
+                                <div class="overlay">
+                                    <button class="prduct_button add_to_cart" data-id="5" data-name="Product 5" data-price="99.99">Add to cart</button>
                                 </div>
+                            </div>
+                            <div class="product_detail">
+                                <h3 class="product_title"><a href="" title="">Title</a></h3>
+                                <p class="product_price">$99.99</p>
                             </div>
                         </div>
                         <div class="cards card_6">
-                            <div class="card_inner">
-                                <div class="card_body card_body_front">
-                                    <h2 class="card_title">front side</h2>
+                            <div class="product">
+                                <div class="image">
+                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                                 </div>
-                                <div class="card_body card_body_back">
-                                    <h2 class="card_title">back side</h2>
+                                <div class="overlay">
+                                    <button class="prduct_button add_to_cart" data-id="6" data-name="Product 6" data-price="99.99">Add to cart</button>
                                 </div>
+                            </div>
+                            <div class="product_detail">
+                                <h3 class="product_title"><a href="" title="">Title</a></h3>
+                                <p class="product_price">$99.99</p>
                             </div>
                         </div>
                         <div class="cards card_7">
-                            <div class="card_inner">
-                                <div class="card_body card_body_front">
-                                    <h2 class="card_title">front side</h2>
+                            <div class="product">
+                                <div class="image">
+                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                                 </div>
-                                <div class="card_body card_body_back">
-                                    <h2 class="card_title">back side</h2>
+                                <div class="overlay">
+                                    <button class="prduct_button add_to_cart" data-id="7" data-name="Product 7" data-price="99.99">Add to cart</button>
                                 </div>
+                            </div>
+                            <div class="product_detail">
+                                <h3 class="product_title"><a href="" title="">Title</a></h3>
+                                <p class="product_price">$99.99</p>
                             </div>
                         </div>
                         <div class="cards card_8">
-                            <div class="card_inner">
-                                <div class="card_body card_body_front">
-                                    <h2 class="card_title">front side</h2>
+                            <div class="product">
+                                <div class="image">
+                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                                 </div>
-                                <div class="card_body card_body_back">
-                                    <h2 class="card_title">back side</h2>
+                                <div class="overlay">
+                                    <button class="prduct_button add_to_cart" data-id="8" data-name="Product 8" data-price="99.99">Add to cart</button>
                                 </div>
+                            </div>
+                            <div class="product_detail">
+                                <h3 class="product_title"><a href="" title="">Title</a></h3>
+                                <p class="product_price">$99.99</p>
                             </div>
                         </div>
                 </div>
@@ -318,34 +367,21 @@
             </div>
         </div>
     </section>
-    <section class="section_4">
-        <div class="container">
-
-        </div>
     </section>
-    <section class="section_3">
+    <section class="section_4">
         <div class="splide__container container">
             <div id="image_carousel" class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <li class="splide__slide">
-                            <img src="./media/img/slide_1.jpg" alt="MICHT - Extreme Generation">
+                        <li class="splide__slide custom_slide">
+                            <img class="splide_img" src="./media/img/slide_1.png" alt="MICHT - Extreme Generation">
                         </li>
-                        <li class="splide__slide">
-                            <img src="./media/img/slide_2.jpg" alt="MICHT - Extreme Generation">
+                        <li class="splide__slide custom_slide">
+                            <img class="splide_img" src="./media/img/slide_2.jpg" alt="MICHT - Extreme Generation">
                         </li>
-                        <li class="splide__slide">
-                            <img src="./media/img/slide_3.jpg" alt="MICHT - Extreme Generation">
+                        <li class="splide__slide custom_slide">
+                            <img class="splide_img" src="./media/img/slide_3.png" alt="MICHT - Extreme Generation">
                         </li>
-                        <li class="splide__slide">
-                            <img src="./media/img/slide_4.jpg" alt="MICHT - Extreme Generation">
-                        </li>
-                        <li class="splide__slide">
-                            <img src="./media/img/slide_5.jpg" alt="MICHT - Extreme Generation">
-                        </li>
-                        <!-- <li class="splide__slide">
-                            <img src="" alt="MICHT - Extreme Generation">
-                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -355,57 +391,53 @@
 <!--* footer -->
     <footer class="footer">
         <div class="container-fluid">
-            <div class="container-xxl">
+            <div class="container">
                 <div class="footer_inner">
                     <div class="row">
                         <div class="col-xxl-3 col-xl-3">
                             <div class="footer_widget">
-                                <h3>
+                                <div>
                                     <a href="/" class="logo-wrapper" title="MICHT - Extreme Generation">
-                                        <span class="logo_text">M</span>
-                                        <span class="logo_text">I</span>
-                                        <span class="logo_text">C</span>
-                                        <span class="logo_text">H</span>
-                                        <span class="logo_text">T</span> 
+                                        <img src="./media/img/logo_bottom.png" alt="">
                                     </a>
-                                </h3>
-                                <div class="footer_contact">
-                                    <p>Ship COD toàn quốc</p>
-                                    <p>FREESHIP đơn hàng từ 700.000đ</p>
+                                </div>
+                                <div class="footer_info">
+                                    <p><ion-icon name="airplane"></ion-icon>COD nationwide</p>
+                                    <p><ion-icon name="gift"></ion-icon> FREE SHIPPING for order over 700.000VND</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xxl-3 col-xl-3">
                             <div class="footer_widget">
-                                <h3>Contact</h3>
+                                <h3><a href="">Contact</a></h3>
                                 <div class="footer_contact">
-                                    <p class="title">MICHT - Extreme Generation</p>
-                                    <p>Quận Hai Bà Trưng, Hà Nội, VN</p>
-                                    <p><a href="mailto:levietnee@gmail.com" title="levietnee@gmail.com">levietnee@gmail.com</a></p>
-                                    <p><a href="tel:0343 678 771" title="0343 678 771">0343 678 771</a></p>
+                                    <p><ion-icon name="home"></ion-icon>MICHT - Extreme Generation</p>
+                                    <p><ion-icon name="location"></ion-icon>Hai Ba Trung, Ha Noi, VN</p>
+                                    <p><a href="mailto:levietnee@gmail.com" title="levietnee@gmail.com"><ion-icon name="mail"></ion-icon>Gmail: levietnee@gmail.com</a></p>
+                                    <p><a href="tel:0343 678 771" title="tel: 0343 678 771"><ion-icon name="call"></ion-icon>Tel: 0343 678 771</a></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xxl-3 col-xl-3">
                             <div class="footer_widget">
-                                <h3>Chính sách</h3>
+                                <h3><a href="">Policy</a></h3>
                                 <ul class="list_menu">
-                                    <li><a href="/" title="Chính sách thành viên" rel="nofollow">Chính sách thành viên</a></li>
-                                    <li><a href="/" title="Chính sách đổi trả" rel="nofollow">Chính sách đổi trả</a></li>
-                                    <li><a href="/" title="Chính sách vận chuyển" rel="nofollow">Chính sách vận chuyển</a></li>
+                                    <li><ion-icon name="file-tray-full"></ion-icon><a href="/" title="Chính sách thành viên" rel="nofollow"></ion-icon>Membership policy</a></li>
+                                    <li><ion-icon name="file-tray-full"></ion-icon><a href="/" title="Chính sách đổi trả" rel="nofollow"></ion-icon>Return and exchange policy</a></li>
+                                    <li><ion-icon name="file-tray-full"></ion-icon><a href="/" title="Chính sách vận chuyển" rel="nofollow"></ion-icon>Shipping policy</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-xxl-3 col-xl-3">
                             <div class="footer_widget subcrible">
-                                <h3>Đăng ký nhận tin</h3>           
-                                <p>Nhận thông tin Products mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+                                <h3><a href="">Subcribe</a></h3>           
+                                <p>Get the latest product updates, promotional news, and more</p>
                                 <form action="" method="post" id="subscribe_form" name="subscribe_form" target="blank">
-                                    <input type="email" class="subscribe_input" value="" placeholder="Email của bạn" name="email" id="mail">
-                                    <button class="btn btn_default" name="subscribe" id="subscribe" type="submit">Đăng ký</button>
+                                    <input type="email" class="subscribe_input" autocomplete="off" value="" placeholder="Your Email" name="email" id="mail">
+                                    <button class="subscribe_btn" name="subscribe" id="subscribe" type="submit">Subcribe</button>
                                 </form>
                                 <div class="footer_payment">
-                                    <ul class="list-menu clearfix">
+                                    <ul class="payment_list">
                                         <li class="item">
                                             <img src="//bizweb.dktcdn.net/100/414/728/themes/867455/assets/payment_1.svg?1681959184187" alt="MICHT - Extreme Generation" />
                                         </li>

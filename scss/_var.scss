@@ -5,8 +5,7 @@
 }
 
 $font-fam1: 'Chakra Petch', sans-serif;
-$font-fam2: 'Poppins', sans-serif;
-$font-fam3: 'Baunk Typeface', sans-serif;
+$font-fam2: 'Baunk Typeface', sans-serif;
 
 // font size
 $font-size-xl1: 2rem;
@@ -19,11 +18,16 @@ $font-size-sm1: 0.5rem;
 $font-size-sm2: 0.75rem;
 
 // color
-$color-red: rgb(133, 0, 0);
-$color-green: rgb(37, 165, 77);
+$color-red: rgb(153, 2, 2);
+$color-light-red: rgb(228, 3, 3);
+$color-red-o80: rgba(153, 2, 2, 0.8);
+$color-green: rgb(41, 180, 85);
+$color-light-green: rgb(62, 220, 112);
 $color-dark-1: rgb(0, 0, 0);
+$color-dark-1-o80: rgba(0, 0, 0,0.8);
 $color-dark-2: rgb(34, 34, 34);
+$color-gray: rgb(49, 49, 49);
+$color-light-gray: rgb(82, 82, 82);
 $color-light-1: rgb(235, 235, 235);
 $color-light-2: rgb(209, 208, 208);
 $color-light-1-o80: rgba(235, 235, 235, 0.8);
-$color-red-o80: rgba(133, 0, 0, 0.8);
