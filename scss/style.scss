@@ -145,7 +145,7 @@ ion-icon {
                             }
                         }
                         .cart_container {
-                            display: none;
+                            // display: none;
                             position: absolute;
                             background-color: $color-light-1;
                             top: 100%;
@@ -155,6 +155,83 @@ ion-icon {
                             padding: 0;
                             border: 1px solid $color-light-gray;
                             min-width: 200px;
+                            .cart_list {
+                                padding: 0;
+                                .cart_item {
+                                    width: 400px;
+                                    display: flex;
+                                    margin: 0.5rem;
+                                    .cart_item_image {
+                                        width: 80px;
+                                        height: 80px;
+                                        object-fit: cover;
+                                    }
+                                    .item_detail {
+                                        display: flex;
+                                        flex-direction: column;
+                                        position: relative;
+                                        padding-left: 20px;
+                                        padding-top: 2px;
+                                        width: 90%;
+                                        .remove_btn {
+                                            position: absolute;
+                                            top: 2px;
+                                            right: 10px;
+                                            display: inline-block;
+                                            border: none;
+                                            border-radius: 50%;
+                                            width: 15px;
+                                            height: 15px;
+                                            ion-icon {
+                                                color: $color-dark-1;
+                                            }
+                                        }
+                                        .product_name {
+                                            font-size: $font-size-md1;
+                                        }
+                                        .product_price {
+                                            font-size: $font-size-sm2;
+                                        }
+                                        .quantity_select {
+                                            margin: auto;
+                                            width: 80px;
+                                            justify-self: center;
+                                            border: 1px solid rgb(167, 167, 167);
+                                            input {
+                                                width: 60%;
+                                                height: 28px;
+                                                text-align: center;
+                                                border: none;
+                                            }
+                                            button {
+                                                width: 20%;
+                                                border: none;
+                                                border-radius: 0;
+                                                background-color: $color-light-2;
+                                                height: 30px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        #cart_total {
+                            width: 100%;
+                            display: block;
+                        }
+                        #cart_actions {
+                            display: flex;
+                            justify-content: space-around;
+                            a {
+                                display: block;
+                                width: 70px;
+                                height: 30px;
+                                background-color: $color-dark-1;
+                                padding: 10px 20px;
+                                span {
+                                    color: $color-light-1;
+                                }
+                            }
                         }
                         div {
                             display: inline;
@@ -580,6 +657,14 @@ ion-icon {
                 }
             }
         }
+    }
+}
+
+.section_4 {
+    .splide__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 

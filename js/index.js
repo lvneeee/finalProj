@@ -170,11 +170,15 @@ $(document).ready(function() {
         
         for (let i = 0; i < cartItems.length; i++) {
             const item = cartItems[i];
-            const itemElement = $("<li></li>").addClass("cart-item");
-            const itemImage = $("<img>").attr("src", item.image).addClass("cart-item-image");
+            const itemElement = $("<li></li>").addClass("cart_item");
+            const itemImage = $("<img>").attr("src", item.image).addClass("cart_item_image");
             const itemDetail = $("<div></div>").addClass("item_detail");
             const itemName = $("<div></div>").addClass("product_name").text(item.name);
+            console.log("itemName:", itemName);
+
             const itemPrice = $("<div></div>").addClass("product_price").text(item.price);
+            console.log("itemPrice:", itemPrice);
+
             const itemQuantity = $("<div></div>").addClass("quantity_select");
             const itemQuantityMinusBtn = $("<button>-</button>").on("click", function() {
                 subtractQuantity(i); 
@@ -183,7 +187,7 @@ $(document).ready(function() {
             const itemQuantityPlusBtn = $("<button>+</button>").on("click", function () {
                 addQuantity(i); 
             });
-            const itemRemoveBtn = $("<button><ion-icon name='close'></ion-icon></button>").on("click", function () {
+            const itemRemoveBtn = $("<button><ion-icon name='close'></ion-icon></button>").addClass("remove_btn").on("click", function () {
                 removeCartItem(i); 
             });
             itemQuantity.append(itemQuantityMinusBtn, itemQuantityInput, itemQuantityPlusBtn);
@@ -243,10 +247,15 @@ $(document).ready(function() {
         width : '100%',
 		height: '750px',
         brakepoints: {
+            1400: {width: '1400px', height: '800px', cover: false},
             1200: { width: '1200px', height: '750px', cover: false},
             800: { width: '800px', height: '600px', cover: true},
         },
         // cover: true,
     });
+        console.log("brakepoints:", brakepoints);
+
+    console.log("splide:", splide);
+
     splide.mount();
 });

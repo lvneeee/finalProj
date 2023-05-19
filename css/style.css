@@ -111,7 +111,6 @@ ion-icon {
         .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item:hover .cart_container {
           display: block; }
         .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container {
-          display: none;
           position: absolute;
           background-color: #ebebeb;
           top: 100%;
@@ -121,6 +120,68 @@ ion-icon {
           padding: 0;
           border: 1px solid #525252;
           min-width: 200px; }
+          .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list {
+            padding: 0; }
+            .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item {
+              width: 400px;
+              display: flex;
+              margin: 0.5rem; }
+              .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .cart_item_image {
+                width: 80px;
+                height: 80px;
+                object-fit: cover; }
+              .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                padding-left: 20px;
+                padding-top: 2px;
+                width: 90%; }
+                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .remove_btn {
+                  position: absolute;
+                  top: 2px;
+                  right: 10px;
+                  display: inline-block;
+                  border: none;
+                  border-radius: 50%;
+                  width: 15px;
+                  height: 15px; }
+                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .remove_btn ion-icon {
+                    color: black; }
+                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .product_name {
+                  font-size: 1rem; }
+                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .product_price {
+                  font-size: 0.75rem; }
+                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .quantity_select {
+                  margin: auto;
+                  width: 80px;
+                  justify-self: center;
+                  border: 1px solid #a7a7a7; }
+                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .quantity_select input {
+                    width: 60%;
+                    height: 28px;
+                    text-align: center;
+                    border: none; }
+                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .quantity_select button {
+                    width: 20%;
+                    border: none;
+                    border-radius: 0;
+                    background-color: #d1d0d0;
+                    height: 30px; }
+        .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item #cart_total {
+          width: 100%;
+          display: block; }
+        .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item #cart_actions {
+          display: flex;
+          justify-content: space-around; }
+          .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item #cart_actions a {
+            display: block;
+            width: 70px;
+            height: 30px;
+            background-color: black;
+            padding: 10px 20px; }
+            .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item #cart_actions a span {
+              color: #ebebeb; }
         .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item div {
           display: inline;
           position: relative; }
@@ -554,6 +615,11 @@ ion-icon {
               top: -6px;
               right: 0;
               transform-origin: left; }
+
+.section_4 .splide__list {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 footer {
   padding: 2rem 0 1rem 0;
