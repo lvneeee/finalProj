@@ -99,6 +99,7 @@ $(document).ready(function() {
     
     animateText('brand_animation', ['Extreme Gen-'], 6);
     animateText('brand_animation_2', ['MICHT'], 6);
+    animateText('brand_animation_3', ['MICHT', 'Extreme Generation'], 6);
 
     // add to cart
     let cartItems = [];
@@ -114,7 +115,7 @@ $(document).ready(function() {
             id: productId,
             name: productName,
             price: productPrice,
-            image: productImage, // Thêm thuộc tính image vào sản phẩm
+            image: productImage,
             quantity: 1
         };
         addToCart(product);
@@ -176,7 +177,7 @@ $(document).ready(function() {
             const itemName = $("<div></div>").addClass("product_name").text(item.name);
             console.log("itemName:", itemName);
 
-            const itemPrice = $("<div></div>").addClass("product_price").text(item.price);
+            const itemPrice = $("<div></div>").addClass("product_price").text('$' + item.price);
             console.log("itemPrice:", itemPrice);
 
             const itemQuantity = $("<div></div>").addClass("quantity_select");
@@ -205,7 +206,7 @@ $(document).ready(function() {
             cartCount.addClass("hide");
         }
 
-        cartTotal.text(totalPrice.toFixed(2));
+        cartTotal.find("#cart_total_value").text(totalPrice.toFixed(2));
         if (totalPrice > 0) {
             cartTotal.removeClass("hide");
             cartActions.removeClass("hide");
@@ -240,22 +241,18 @@ $(document).ready(function() {
         type: 'loop',
         rewind: true,
         autoplay: true,
+        // drag: false,
         focus: 'center',
         perPage: 1,
         pagination: false,
         arrows: false,
         width : '100%',
 		height: '750px',
+        cover: true,
         brakepoints: {
-            1400: {width: '1400px', height: '800px', cover: false},
-            1200: { width: '1200px', height: '750px', cover: false},
-            800: { width: '800px', height: '600px', cover: true},
+            1400: {width: '100%', height: '800px', cover: false},
+            800: { width: '100%', height: '600px', cover: true},
         },
-        // cover: true,
     });
-        console.log("brakepoints:", brakepoints);
-
-    console.log("splide:", splide);
-
     splide.mount();
 });

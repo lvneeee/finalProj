@@ -25,28 +25,74 @@
         <div class="container-fluid">
             <div class="row row_top">
                 <!-- moblie -->
-                <button type="button" class="navbar_toggle moblie_only" id="trigger_mobile">
+                <button type="button" class="navbar_toggle d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none col-sm-1 col-md-1" id="trigger_mobile" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-					<i>Menu</i>
 				</button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                    <div class="offcanvas-header">
+                        <h3 class="offcanvas-title" id="offcanvasLabel">MENU</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="nav flex-column align_start">
+                            <li class="nav_item">
+                                <a class="nav_link" href="#" title="Home">Home</a>
+                            </li>
+                            <li class="nav_item">
+                                <a class="nav_link" href="#" title="About Us">About Us</a>
+                            </li>
+                            <li class="nav_item">
+                                <a class="nav_link" href="#" title="All Sale">All Sale</a>
+                            </li>
+                            <li class="nav_item dropdown">
+                                <a href="#" class="nav_link dropdown-toggle" title="Products" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products <ion-icon name="chevron-down"></ion-icon>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                                    <li><a class="dropdown-item" href="#" title="Product 1">TOP</a></li>
+                                    <li><a class="dropdown-item" href="#" title="Product 2">BOTTOM</a></li>
+                                    <li><a class="dropdown-item" href="#" title="Product 3">ACCESSORY</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item dropdown">
+                                <a href="#" class="nav_link dropdown-toggle" title="New Arrival" id="newArrivalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                New Arrival <ion-icon name="chevron-down"></ion-icon>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="newArrivalDropdown">
+                                    <li><a class="dropdown-item" href="#" title="New Arrival 1">TOP</a></li>
+                                    <li><a class="dropdown-item" href="#" title="New Arrival 2">BOTTOM</a></li>
+                                    <li><a class="dropdown-item" href="#" title="New Arrival 3">ACCESSORY</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <!-- end mobile -->
-                <nav class="nav nav_main col">
+                <nav class="nav nav_main d-sm-none d-md-none d-lg-flex d-xl-flex d-xxl-flex col-lg-3 col-xl-4 col-xxl-4">
 					<ul class="nav desktop_only info">
-						<li class="nav_item"><ion-icon name="location"></ion-icon><a class="nav_link" href="" title="Location: Vietnam">Loc: Vietnam</a></li>						
-						<li class="nav_item"><ion-icon name="call"></ion-icon><a class="nav_link" href="tel: 0343 678 771" title="Tel: 0343 678 771">Tel: 0343 678 771</a></li>
+						<li class="nav_item"><ion-icon name="location"></ion-icon>
+                            <a class="nav_link" href="" title="Location: Vietnam">
+                                <span class="d-sm-none d-md-none d-lg-none d-xl-inline d-xxl-inld-xl-inline">Loc:</span> Vietnam
+                            </a>
+                        </li>						
+						<li class="nav_item"><ion-icon name="call"></ion-icon>
+                            <a class="nav_link" href="tel: 0343 678 771" title="Tel: 0343 678 771">
+                                <span class="d-sm-none d-md-none d-lg-none d-xl-inline d-xxl-inld-xl-inline">Tel:</span> 0343 678 771
+                            </a>
+                        </li>
 					</ul>
 				</nav>
-                <div class="logo_wrapper col-6">
+                <div class="logo_wrapper col-sm-11 col-md-11 col-lg-6 col-xl-4 col-xxl-4">
                     <a href="/" class="logo" title="MICHT - Extreme Generation">
                         <img src="./media/img/logo_top.png" alt="MICHT - Extreme Generation">            
                     </a>
                 </div>
-                <nav class="nav nav_utility col">
+                <nav class="nav nav_utility d-sm-none d-md-none d-lg-flex d-xl-flex d-xxl-flex col-lg-3 col-xl-4 col-xxl-4">
                     <ul class="nav nav_interior">
                         <li class="nav_item nav_search_item has_secondary">
-							<button class="nav_link nav_search" title="Search">
+							<button class="nav_link nav_search d-sm-none d-md-none d-lg-inline-block d-xl-inline-block d-xxl-inline-block" title="Search">
 								<span class="desktop_only">
                                     <ion-icon name="search-outline"></ion-icon>
                                 </span>
@@ -59,39 +105,42 @@
 							</div>
 						</li>
                         <li class="nav_item nav_account_item" id="cart_container">
-                            <a href="" class="nav_link nav_account" title="Account">Account</a>
+                            <a href="" class="nav_link nav_account d-sm-none d-md-none d-lg-none d-xl-inline d-xxl-inline" title="Account">Account</a>
                             <ion-icon name="person-circle-outline"></ion-icon>
 						</li>
                         <li class="nav_item nav_cart_item">
-                            <a href="" class="nav_link nav_cart" title="Cart">Cart</a>
+                            <a href="" class="nav_link nav_cart d-sm-none d-md-none d-lg-none d-xl-inline d-xxl-inline" title="Cart">Cart</a>
                             <div>
                                 <ion-icon name="cart"></ion-icon>
                                 <span id="cart_count" class="cart_count hide">0</span>
                             </div>
                             <div class="cart_container">
-                                <ul class="cart_list" id="cart_list">
-                                </ul>
-                                <div id="cart_noti" class="empty_noti">
-                                    <p style="font-size: 1rem; text-align: center; margin: 0;">Your cart is empty</p>
-                                </div>
-                                <div id="cart_total" class="subtotal hide">
-                                    Total:
-                                    <span class="total_price"></span>
-                                </div>
-                                <div id="cart_actions" class="actions hide">
-                                    <a href="" class="checkout action_btn"><span>Checkout</span></a>
-                                    <a href="" class="view_cart ation_btn"><span>Cart</span></a>
+                                <div class="cart_wrapper">
+                                    <ul class="cart_list" id="cart_list">
+                                    </ul>
+                                    <div id="cart_noti" class="empty_noti">
+                                        <p style="font-size: 1rem; text-align: center; margin: 0;">Your cart is empty</p>
+                                    </div>
+                                    <div class="cart_bottom">
+                                        <div id="cart_total" class="subtotal hide">
+                                            Total: <span id="cart_total_value"></span>$
+                                        </div>
+                                        <div id="cart_actions" class="actions hide">
+                                            <button class="checkout action_btn">Checkout <ion-icon name="card-outline"></ion-icon></button>
+                                            <button class="view_cart ation_btn">Cart <ion-icon name="open-outline"></ion-icon></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 						</li>
                     </ul>
                 </nav>
             </div>
-            <div class="row row_bottom">
+            <div class="row row_bottom d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
                 <ul class="nav">
-                    <li class="nav_item active"><a class="nav_link" href="" title="Home">Home</a></li>
-                    <li class="nav_item "><a class="nav_link" href="" title="About Us">About Us</a></li>
-                    <li class="nav_item "><a class="nav_link" href="" title="ALL SALE">ALL SALE</a></li>
+                    <li class="nav_item"><a class="nav_link" href="" title="Home">Home</a></li>
+                    <li class="nav_item"><a class="nav_link" href="" title="About Us">About Us</a></li>
+                    <li class="nav_item"><a class="nav_link" href="" title="ALL SALE">ALL SALE</a></li>
                     <li class=" nav_item has_childs has_mega">
                         <a href="" class="nav_link" title="Products">Products<ion-icon name="chevron-down"></ion-icon></a>			
                         <div class="mega_menu container menu">
@@ -209,125 +258,128 @@
                 <div class="section_title">
                     <h2><a href="">New arrival</a></h2>
                 </div>
-                <div class="d-grid">
-                        <div class="cards card_1">
-                            <div class="product">
-                                <div class="image">
-                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
-                                </div>
-                                <div class="overlay">
-                                    <button class="prduct_button add_to_cart" data-id="1" data-name="Product 1" data-price="99.99">Add to cart</button>
-                                </div>
+                <div class="custom_grid d-sm-flex flex-sm-wrap m-sm-auto d-md-flex flex-md-wrap m-md-auto d-lg-grid d-xl-grid d-xxl-grid">
+                    <div class="cards card_1 m-sm-auto m-md-auto">
+                        <div class="product">
+                            <div class="image">
+                                <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                             </div>
-                            <div class="product_detail">
-                                <h3 class="product_title"><a href="" title="">Title</a></h3>
-                                <p class="product_price">$99.99</p>
+                            <div class="overlay">
+                                <button class="prduct_button add_to_cart" data-id="1" data-name="Product 1" data-price="99.99">Add to cart</button>
                             </div>
                         </div>
-                        <div class="cards card_2">
-                            <div class="product">
-                                <div class="image">
-                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
-                                </div>
-                                <div class="overlay">
-                                    <button class="prduct_button add_to_cart" data-id="2" data-name="Product 2" data-price="99.99">Add to cart</button>
-                                </div>
-                            </div> 
-                            <div class="product_detail">
-                                <h3 class="product_title"><a href="" title="">Title</a></h3>
-                                <p class="product_price">$99.99</p>
+                        <div class="product_detail">
+                            <h3 class="product_title"><a href="" title="">Title</a></h3>
+                            <p class="product_price">$99.99</p>
+                        </div>
+                    </div>
+                    <div class="cards card_2 m-sm-auto m-md-auto">
+                        <div class="product">
+                            <div class="image">
+                                <a href=""><img src="./media/img/demo.jpg" alt=""></a>
+                            </div>
+                            <div class="overlay">
+                                <button class="prduct_button add_to_cart" data-id="2" data-name="Product 2" data-price="99.99">Add to cart</button>
+                            </div>
+                        </div> 
+                        <div class="product_detail">
+                            <h3 class="product_title"><a href="" title="">Title</a></h3>
+                            <p class="product_price">$99.99</p>
+                        </div>
+                    </div>
+                    <div class="cards card_3 m-sm-auto m-md-auto">
+                        <div class="product">
+                            <div class="image">
+                                <a href=""><img src="./media/img/demo.jpg" alt=""></a>
+                            </div>
+                            <div class="overlay">
+                                <button class="prduct_button add_to_cart" data-id="3" data-name="Product 3" data-price="99.99">Add to cart</button>
                             </div>
                         </div>
-                        <div class="cards card_3">
-                            <div class="product">
-                                <div class="image">
-                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
-                                </div>
-                                <div class="overlay">
-                                    <button class="prduct_button add_to_cart" data-id="3" data-name="Product 3" data-price="99.99">Add to cart</button>
-                                </div>
+                        <div class="product_detail">
+                            <h3 class="product_title"><a href="" title="">Title</a></h3>
+                            <p class="product_price">$99.99</p>
+                        </div>
+                    </div>
+                    <div class="cards card_4 m-sm-auto m-md-auto">
+                        <div class="product">
+                            <div class="image">
+                                <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                             </div>
-                            <div class="product_detail">
-                                <h3 class="product_title"><a href="" title="">Title</a></h3>
-                                <p class="product_price">$99.99</p>
+                            <div class="overlay">
+                                <button class="prduct_button add_to_cart" data-id="4" data-name="Product 4" data-price="99.99">Add to cart</button>
                             </div>
                         </div>
-                        <div class="cards card_4">
-                            <div class="product">
-                                <div class="image">
-                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
-                                </div>
-                                <div class="overlay">
-                                    <button class="prduct_button add_to_cart" data-id="4" data-name="Product 4" data-price="99.99">Add to cart</button>
-                                </div>
+                        <div class="product_detail">
+                            <h3 class="product_title"><a href="" title="">Title</a></h3>
+                            <p class="product_price">$99.99</p>
+                        </div>
+                    </div>
+                    <div class="banner banner_1  d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+                        <div id="brand_animation" class="blink_animation"></div>
+                    </div>
+                    <div class="banner banner_2 d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+                        <div id="brand_animation_2" class=" blink_animation"></div>
+                    </div>
+                    <div class="banner banner_3 d-sm-block m-sm-auto d-md-block m-md-auto d-lg-none d-xl-none d-xxl-none">
+                        <div id="brand_animation_3" class=" blink_animation"></div>
+                    </div>
+                    <div class="cards card_5 m-sm-auto m-md-auto">
+                        <div class="product">
+                            <div class="image">
+                                <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                             </div>
-                            <div class="product_detail">
-                                <h3 class="product_title"><a href="" title="">Title</a></h3>
-                                <p class="product_price">$99.99</p>
+                            <div class="overlay">
+                                <button class="prduct_button add_to_cart" data-id="5" data-name="Product 5" data-price="99.99">Add to cart</button>
                             </div>
                         </div>
-                        <div class="banner banner_1">
-                            <div id="brand_animation" class="blink_animation"></div>
+                        <div class="product_detail">
+                            <h3 class="product_title"><a href="" title="">Title</a></h3>
+                            <p class="product_price">$99.99</p>
                         </div>
-                        <div class="banner banner_2">
-                            <div id="brand_animation_2" class=" blink_animation"></div>
-                        </div>
-                        <div class="cards card_5">
-                            <div class="product">
-                                <div class="image">
-                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
-                                </div>
-                                <div class="overlay">
-                                    <button class="prduct_button add_to_cart" data-id="5" data-name="Product 5" data-price="99.99">Add to cart</button>
-                                </div>
+                    </div>
+                    <div class="cards card_6 m-sm-auto m-md-auto">
+                        <div class="product">
+                            <div class="image">
+                                <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                             </div>
-                            <div class="product_detail">
-                                <h3 class="product_title"><a href="" title="">Title</a></h3>
-                                <p class="product_price">$99.99</p>
+                            <div class="overlay">
+                                <button class="prduct_button add_to_cart" data-id="6" data-name="Product 6" data-price="99.99">Add to cart</button>
                             </div>
                         </div>
-                        <div class="cards card_6">
-                            <div class="product">
-                                <div class="image">
-                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
-                                </div>
-                                <div class="overlay">
-                                    <button class="prduct_button add_to_cart" data-id="6" data-name="Product 6" data-price="99.99">Add to cart</button>
-                                </div>
+                        <div class="product_detail">
+                            <h3 class="product_title"><a href="" title="">Title</a></h3>
+                            <p class="product_price">$99.99</p>
+                        </div>
+                    </div>
+                    <div class="cards card_7 m-sm-auto m-md-auto">
+                        <div class="product">
+                            <div class="image">
+                                <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                             </div>
-                            <div class="product_detail">
-                                <h3 class="product_title"><a href="" title="">Title</a></h3>
-                                <p class="product_price">$99.99</p>
+                            <div class="overlay">
+                                <button class="prduct_button add_to_cart" data-id="7" data-name="Product 7" data-price="99.99">Add to cart</button>
                             </div>
                         </div>
-                        <div class="cards card_7">
-                            <div class="product">
-                                <div class="image">
-                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
-                                </div>
-                                <div class="overlay">
-                                    <button class="prduct_button add_to_cart" data-id="7" data-name="Product 7" data-price="99.99">Add to cart</button>
-                                </div>
+                        <div class="product_detail">
+                            <h3 class="product_title"><a href="" title="">Title</a></h3>
+                            <p class="product_price">$99.99</p>
+                        </div>
+                    </div>
+                    <div class="cards card_8 m-sm-auto m-md-auto">
+                        <div class="product">
+                            <div class="image">
+                                <a href=""><img src="./media/img/demo.jpg" alt=""></a>
                             </div>
-                            <div class="product_detail">
-                                <h3 class="product_title"><a href="" title="">Title</a></h3>
-                                <p class="product_price">$99.99</p>
+                            <div class="overlay">
+                                <button class="prduct_button add_to_cart" data-id="8" data-name="Product 8" data-price="99.99">Add to cart</button>
                             </div>
                         </div>
-                        <div class="cards card_8">
-                            <div class="product">
-                                <div class="image">
-                                    <a href=""><img src="./media/img/demo.jpg" alt=""></a>
-                                </div>
-                                <div class="overlay">
-                                    <button class="prduct_button add_to_cart" data-id="8" data-name="Product 8" data-price="99.99">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="product_detail">
-                                <h3 class="product_title"><a href="" title="">Title</a></h3>
-                                <p class="product_price">$99.99</p>
-                            </div>
+                        <div class="product_detail">
+                            <h3 class="product_title"><a href="" title="">Title</a></h3>
+                            <p class="product_price">$99.99</p>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -339,7 +391,7 @@
                     <h2><a href="">Products</a></h2>
                 </div>
                 <div class="row">
-                    <div class="col-4 col">
+                    <div class="col-sm-12 mt-sm-3 col-md-6 col-xl-4 col-xxl-4 col_container">
                         <a href="" title="TOP">
                             <div>
                                 <img src="./media/img/bg_1.jpg" alt="MICHT - Extreme Generation">
@@ -347,7 +399,7 @@
                             <h2 class="title"><span>TOP</span></h2>
                         </a>
                     </div>
-                    <div class="col-4 col">
+                    <div class="col-sm-12 mt-sm-3 col-md-6 col-xl-4 col-xxl-4 col_container">
                         <a href="" title="BOTTOM">
                             <div>
                                 <img src="./media/img/bg_2.jpg" alt="MICHT - Extreme Generation">
@@ -355,7 +407,7 @@
                             <h2 class="title"><span>BOTTOM</span></h2>
                         </a>
                     </div>
-                    <div class="col-4 col">
+                    <div class="col-sm-12 mt-sm-3 col-md-12 mt-md-4 col-xl-4 col-xxl-4 col_container">
                         <a href="" title="ACCESSORY">
                             <div>
                                 <img src="./media/img/bg_3.jpg" alt="MICHT - Extreme Generation">
@@ -368,8 +420,8 @@
         </div>
     </section>
     </section>
-    <section class="section_4">
-        <div class="splide__container container">
+    <section class="section_4 container">
+        <div class="splide__container">
             <div id="image_carousel" class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
@@ -394,7 +446,7 @@
             <div class="container">
                 <div class="footer_inner">
                     <div class="row">
-                        <div class="col-xxl-3 col-xl-3">
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
                             <div class="footer_widget">
                                 <div>
                                     <a href="/" class="logo-wrapper" title="MICHT - Extreme Generation">
@@ -407,7 +459,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xxl-3 col-xl-3">
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
                             <div class="footer_widget">
                                 <h3><a href="">Contact</a></h3>
                                 <div class="footer_contact">
@@ -418,17 +470,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xxl-3 col-xl-3">
+                        <div class="col-sm-6 mt-sm-2 col-md-6 mt-md-2 col-lg-4 col-xl-3 col-xxl-3">
                             <div class="footer_widget">
                                 <h3><a href="">Policy</a></h3>
                                 <ul class="list_menu">
-                                    <li><ion-icon name="file-tray-full"></ion-icon><a href="/" title="Chính sách thành viên" rel="nofollow"></ion-icon>Membership policy</a></li>
-                                    <li><ion-icon name="file-tray-full"></ion-icon><a href="/" title="Chính sách đổi trả" rel="nofollow"></ion-icon>Return and exchange policy</a></li>
-                                    <li><ion-icon name="file-tray-full"></ion-icon><a href="/" title="Chính sách vận chuyển" rel="nofollow"></ion-icon>Shipping policy</a></li>
+                                    <li><ion-icon name="file-tray-full"></ion-icon><a href="/" title="Membership policy" rel="nofollow"></ion-icon>Membership policy</a></li>
+                                    <li><ion-icon name="file-tray-full"></ion-icon><a href="/" title="Return and exchange policy" rel="nofollow"></ion-icon>Return and exchange policy</a></li>
+                                    <li><ion-icon name="file-tray-full"></ion-icon><a href="/" title="Shipping policy" rel="nofollow"></ion-icon>Shipping policy</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xxl-3 col-xl-3">
+                        <div class="col-sm-6 mt-sm-2 col-md-6 mt-md-2 col-lg-12 mt-lg-3 col-xl-3 col-xxl-3">
                             <div class="footer_widget subcrible">
                                 <h3><a href="">Subcribe</a></h3>           
                                 <p>Get the latest product updates, promotional news, and more</p>
@@ -458,6 +510,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center m-0">
+                <div class="footer_bottom">
+                    <p>&copy; 2020 MICHT - Extreme Generation. All Rights Reserved.</p>
                 </div>
             </div>
         </div>

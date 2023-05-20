@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -79,8 +80,45 @@ ion-icon {
     margin: 0.5rem 0 1rem 0;
     height: 30px;
     display: flex; }
-    .header .container-fluid .row_top .moblie_only {
-      display: none; }
+    .header .container-fluid .row_top #trigger_mobile {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      border: none;
+      background: transparent; }
+      .header .container-fluid .row_top #trigger_mobile span {
+        width: 20px;
+        height: 2px;
+        background-color: black;
+        margin: auto;
+        display: block;
+        margin-bottom: 4px; }
+    .header .container-fluid .row_top .offcanvas .offcanvas-body {
+      overflow: visible; }
+      .header .container-fluid .row_top .offcanvas .offcanvas-body .align_start {
+        align-items: flex-start; }
+        .header .container-fluid .row_top .offcanvas .offcanvas-body .align_start .nav_item {
+          line-height: 1.5rem;
+          margin-bottom: 1rem;
+          font-size: 1.2rem;
+          position: relative; }
+          .header .container-fluid .row_top .offcanvas .offcanvas-body .align_start .nav_item::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            transform: scaleX(0);
+            transition: transform 0.2s linear;
+            transform-origin: right; }
+          .header .container-fluid .row_top .offcanvas .offcanvas-body .align_start .nav_item:hover::before {
+            transform: scaleX(1);
+            transform-origin: left; }
+          .header .container-fluid .row_top .offcanvas .offcanvas-body .align_start .nav_item .dropdown-toggle::after {
+            display: none; }
     .header .container-fluid .row_top .logo_wrapper {
       height: inherit;
       display: flex;
@@ -111,77 +149,98 @@ ion-icon {
         .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item:hover .cart_container {
           display: block; }
         .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container {
+          display: none;
           position: absolute;
           background-color: #ebebeb;
           top: 100%;
           right: 0;
+          max-height: 80vh;
+          overflow: auto;
           width: max-content;
           z-index: 99999;
           padding: 0;
           border: 1px solid #525252;
           min-width: 200px; }
-          .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list {
-            padding: 0; }
-            .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item {
-              width: 400px;
-              display: flex;
-              margin: 0.5rem; }
-              .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .cart_item_image {
-                width: 80px;
-                height: 80px;
-                object-fit: cover; }
-              .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail {
+          .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper {
+            position: relative; }
+            .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list {
+              padding: 0; }
+              .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item {
+                width: 400px;
                 display: flex;
-                flex-direction: column;
-                position: relative;
-                padding-left: 20px;
-                padding-top: 2px;
-                width: 90%; }
-                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .remove_btn {
-                  position: absolute;
-                  top: 2px;
-                  right: 10px;
-                  display: inline-block;
-                  border: none;
-                  border-radius: 50%;
-                  width: 15px;
-                  height: 15px; }
-                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .remove_btn ion-icon {
-                    color: black; }
-                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .product_name {
-                  font-size: 1rem; }
-                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .product_price {
-                  font-size: 0.75rem; }
-                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .quantity_select {
-                  margin: auto;
+                margin: 0.5rem; }
+                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item .cart_item_image {
                   width: 80px;
-                  justify-self: center;
-                  border: 1px solid #a7a7a7; }
-                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .quantity_select input {
-                    width: 60%;
-                    height: 28px;
-                    text-align: center;
-                    border: none; }
-                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_list .cart_item .item_detail .quantity_select button {
-                    width: 20%;
+                  height: 80px;
+                  object-fit: cover; }
+                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item .item_detail {
+                  display: flex;
+                  flex-direction: column;
+                  position: relative;
+                  padding-left: 20px;
+                  padding-top: 2px;
+                  width: 90%; }
+                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item .item_detail .remove_btn {
+                    position: absolute;
+                    top: 2px;
+                    right: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
                     border: none;
-                    border-radius: 0;
-                    background-color: #d1d0d0;
-                    height: 30px; }
-        .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item #cart_total {
-          width: 100%;
-          display: block; }
-        .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item #cart_actions {
-          display: flex;
-          justify-content: space-around; }
-          .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item #cart_actions a {
-            display: block;
-            width: 70px;
-            height: 30px;
-            background-color: black;
-            padding: 10px 20px; }
-            .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item #cart_actions a span {
-              color: #ebebeb; }
+                    border-radius: 50%;
+                    width: 15px;
+                    height: 15px;
+                    z-index: 100000;
+                    cursor: pointer; }
+                    .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item .item_detail .remove_btn ion-icon {
+                      color: black; }
+                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item .item_detail .product_name {
+                    font-size: 1rem; }
+                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item .item_detail .product_price {
+                    font-size: 0.75rem; }
+                  .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item .item_detail .quantity_select {
+                    margin: auto;
+                    width: 80px;
+                    justify-self: center;
+                    border: 1px solid #a7a7a7; }
+                    .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item .item_detail .quantity_select input {
+                      width: 50%;
+                      height: 28px;
+                      text-align: center;
+                      border: none; }
+                    .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper .cart_list .cart_item .item_detail .quantity_select button {
+                      width: 25%;
+                      border: none;
+                      border-radius: 0;
+                      background-color: #d1d0d0;
+                      height: 30px; }
+            .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper #cart_total {
+              width: 100%;
+              display: block;
+              line-height: 2rem;
+              font-size: 1.2rem;
+              padding-left: 20px;
+              padding-top: 0.5rem;
+              margin: 1rem 0 0.5rem 0;
+              border-top: 1px solid black; }
+            .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper #cart_actions {
+              display: flex; }
+              .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper #cart_actions button {
+                padding: 10px 20px;
+                border: none;
+                background-color: black;
+                color: #ebebeb;
+                cursor: pointer;
+                width: 50%; }
+                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper #cart_actions button:first-child {
+                  border-right: 1px solid #ebebeb; }
+                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper #cart_actions button:last-child {
+                  border-left: 1px solid #ebebeb; }
+                .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item .cart_container .cart_wrapper #cart_actions button ion-icon {
+                  margin-left: 5px;
+                  color: #ebebeb !important; }
         .header .container-fluid .row_top .nav_utility .nav_interior .nav_cart_item div {
           display: inline;
           position: relative; }
@@ -214,6 +273,8 @@ ion-icon {
           padding: 5px;
           border-radius: 4px; }
           .header .container-fluid .row_top .nav_utility .nav_interior .nav_search_item .secondary_nav .custom_form #search_bar {
+            padding-left: 5px;
+            height: 30px;
             margin: auto;
             width: 100%;
             outline: none; }
@@ -225,7 +286,7 @@ ion-icon {
             top: 6px;
             border: none;
             cursor: pointer;
-            height: 33px; }
+            height: 28px; }
   .header .container-fluid .row_bottom {
     text-transform: uppercase;
     font-weight: 500;
@@ -430,47 +491,48 @@ ion-icon {
       .section_2 .wrapper .section_title h2:hover::before {
         transform: scaleX(1);
         transform-origin: left; }
-  .section_2 .wrapper .d-grid {
+  .section_2 .wrapper .custom_grid {
+    display: grid;
     height: auto;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-column-gap: 30px;
     grid-row-gap: 20px; }
-    .section_2 .wrapper .d-grid .card_1 {
+    .section_2 .wrapper .custom_grid .card_1 {
       grid-area: 1 / 1 / 5 / 3; }
-    .section_2 .wrapper .d-grid .card_2 {
+    .section_2 .wrapper .custom_grid .card_2 {
       grid-area: 1 / 3 / 5 / 5; }
-    .section_2 .wrapper .d-grid .card_3 {
+    .section_2 .wrapper .custom_grid .card_3 {
       grid-area: 5 / 1 / 9 / 3; }
-    .section_2 .wrapper .d-grid .card_4 {
+    .section_2 .wrapper .custom_grid .card_4 {
       grid-area: 5 / 3 / 9 / 5; }
-    .section_2 .wrapper .d-grid .card_5 {
+    .section_2 .wrapper .custom_grid .card_5 {
       grid-area: 3 / 5 / 7 / 7; }
-    .section_2 .wrapper .d-grid .card_6 {
+    .section_2 .wrapper .custom_grid .card_6 {
       grid-area: 3 / 7 / 7 / 9; }
-    .section_2 .wrapper .d-grid .card_7 {
+    .section_2 .wrapper .custom_grid .card_7 {
       grid-area: 7 / 5 / 11 / 7; }
-    .section_2 .wrapper .d-grid .card_8 {
+    .section_2 .wrapper .custom_grid .card_8 {
       grid-area: 7 / 7 / 11 / 9; }
-    .section_2 .wrapper .d-grid .banner_1 {
+    .section_2 .wrapper .custom_grid .banner_1 {
       grid-area: 9 / 1 / 11 / 5; }
-    .section_2 .wrapper .d-grid .banner_2 {
+    .section_2 .wrapper .custom_grid .banner_2 {
       grid-area: 1 / 5 / 3 / 9; }
-    .section_2 .wrapper .d-grid .cards .product {
+    .section_2 .wrapper .custom_grid .cards .product {
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       overflow: hidden; }
-      .section_2 .wrapper .d-grid .cards .product .image {
+      .section_2 .wrapper .custom_grid .cards .product .image {
         overflow: hidden;
         width: 100%; }
-        .section_2 .wrapper .d-grid .cards .product .image img {
+        .section_2 .wrapper .custom_grid .cards .product .image img {
           width: 100%;
           height: auto;
           transition: transform 0.5s ease;
           object-fit: cover; }
-      .section_2 .wrapper .d-grid .cards .product .overlay {
+      .section_2 .wrapper .custom_grid .cards .product .overlay {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -483,32 +545,32 @@ ion-icon {
         display: flex;
         align-items: center;
         justify-content: center; }
-        .section_2 .wrapper .d-grid .cards .product .overlay .prduct_button {
+        .section_2 .wrapper .custom_grid .cards .product .overlay .prduct_button {
           padding: 10px 20px;
           border: none;
           border-radius: 5px;
           background-color: black;
           color: #ebebeb;
           cursor: pointer; }
-          .section_2 .wrapper .d-grid .cards .product .overlay .prduct_button:hover {
+          .section_2 .wrapper .custom_grid .cards .product .overlay .prduct_button:hover {
             background-color: #ebebeb;
             color: black; }
-          .section_2 .wrapper .d-grid .cards .product .overlay .prduct_button:active {
+          .section_2 .wrapper .custom_grid .cards .product .overlay .prduct_button:active {
             transform: translateY(2px); }
-      .section_2 .wrapper .d-grid .cards .product:hover img {
+      .section_2 .wrapper .custom_grid .cards .product:hover img {
         transform: scale(1.1); }
-      .section_2 .wrapper .d-grid .cards .product:hover .overlay {
+      .section_2 .wrapper .custom_grid .cards .product:hover .overlay {
         transform: translateY(0%); }
-    .section_2 .wrapper .d-grid .cards .product_detail .product_title {
+    .section_2 .wrapper .custom_grid .cards .product_detail .product_title {
       font: 600 1.2rem "Chakra Petch", sans-serif;
       margin: 10px 0 0 0; }
-      .section_2 .wrapper .d-grid .cards .product_detail .product_title a {
+      .section_2 .wrapper .custom_grid .cards .product_detail .product_title a {
         color: black; }
-    .section_2 .wrapper .d-grid .cards .product_detail .product_price {
+    .section_2 .wrapper .custom_grid .cards .product_detail .product_price {
       font: 500 0.75rem "Chakra Petch", sans-serif; }
-    .section_2 .wrapper .d-grid .banner {
+    .section_2 .wrapper .custom_grid .banner {
       width: 100%; }
-      .section_2 .wrapper .d-grid .banner .blink_animation {
+      .section_2 .wrapper .custom_grid .banner .blink_animation {
         width: 100%;
         display: flex;
         align-items: center;
@@ -517,20 +579,23 @@ ion-icon {
         background-color: black;
         color: #29b455;
         text-shadow: 0 0 10px rgba(37, 165, 77, 0.5), 0 0 20px rgba(37, 165, 77, 0.5), 0 0 30px rgba(37, 165, 77, 0.5), 0 0 40px rgba(37, 165, 77, 0.7), 0 0 70px rgba(37, 165, 77, 0.7), 0 0 80px rgba(37, 165, 77, 0.7), 0 0 100px rgba(37, 165, 77, 0.7), 0 0 150px rgba(37, 165, 77, 0.7); }
-        .section_2 .wrapper .d-grid .banner .blink_animation::after {
+        .section_2 .wrapper .custom_grid .banner .blink_animation::after {
           content: "|";
           animation: blink 1s step-end infinite; }
 @keyframes blink {
   50% {
     opacity: 0; } }
-      .section_2 .wrapper .d-grid .banner #brand_animation {
+      .section_2 .wrapper .custom_grid .banner #brand_animation {
         font: 500 2rem "Baunk Typeface", sans-serif;
         height: 70%;
         box-shadow: inset 0 0 2px rgba(37, 165, 77, 0.5), inset 0 0 4px rgba(37, 165, 77, 0.5), inset 0 0 6px rgba(37, 165, 77, 0.5), inset 0 0 8px rgba(37, 165, 77, 0.7), inset 0 0 14px rgba(37, 165, 77, 0.7), inset 0 0 16px rgba(37, 165, 77, 0.7), inset 0 0 20px rgba(37, 165, 77, 0.7), inset 0 0 30px rgba(37, 165, 77, 0.7); }
-      .section_2 .wrapper .d-grid .banner #brand_animation_2 {
+      .section_2 .wrapper .custom_grid .banner #brand_animation_2, .section_2 .wrapper .custom_grid .banner #brand_animation_3 {
         font: 500 3rem "Baunk Typeface", sans-serif;
         height: 100%;
         box-shadow: inset 0 0 2px rgba(37, 165, 77, 0.5), inset 0 0 4px rgba(37, 165, 77, 0.5), inset 0 0 6px rgba(37, 165, 77, 0.5), inset 0 0 8px rgba(37, 165, 77, 0.7), inset 0 0 14px rgba(37, 165, 77, 0.7), inset 0 0 16px rgba(37, 165, 77, 0.7), inset 0 0 20px rgba(37, 165, 77, 0.7), inset 0 0 30px rgba(37, 165, 77, 0.7); }
+      .section_2 .wrapper .custom_grid .banner #brand_animation_3 {
+        height: 130px;
+        padding: 20px; }
 
 .section_3 .wrapper {
   background-color: #fff;
@@ -564,29 +629,29 @@ ion-icon {
         transform-origin: left; }
   .section_3 .wrapper .row {
     margin-bottom: 3rem; }
-    .section_3 .wrapper .row .col {
+    .section_3 .wrapper .row .col_container {
       position: relative; }
-      .section_3 .wrapper .row .col a {
+      .section_3 .wrapper .row .col_container a {
         display: block;
         overflow: hidden; }
-        .section_3 .wrapper .row .col a:hover div {
+        .section_3 .wrapper .row .col_container a:hover div {
           filter: blur(10px); }
-        .section_3 .wrapper .row .col a:hover img {
+        .section_3 .wrapper .row .col_container a:hover img {
           transform: scale(1.05); }
-        .section_3 .wrapper .row .col a:hover .title {
+        .section_3 .wrapper .row .col_container a:hover .title {
           transform: scale(1.1); }
-          .section_3 .wrapper .row .col a:hover .title span::before {
+          .section_3 .wrapper .row .col_container a:hover .title span::before {
             transform: scaleX(1);
             transform-origin: left; }
-          .section_3 .wrapper .row .col a:hover .title span::after {
+          .section_3 .wrapper .row .col_container a:hover .title span::after {
             transform: scaleX(1);
             transform-origin: right; }
-        .section_3 .wrapper .row .col a img {
+        .section_3 .wrapper .row .col_container a img {
           object-fit: cover;
           height: 450px;
           width: 100%;
           filter: brightness(20%); }
-        .section_3 .wrapper .row .col a .title {
+        .section_3 .wrapper .row .col_container a .title {
           position: absolute;
           top: 0;
           left: 0;
@@ -597,9 +662,9 @@ ion-icon {
           display: flex;
           justify-content: center;
           align-items: center; }
-          .section_3 .wrapper .row .col a .title span {
+          .section_3 .wrapper .row .col_container a .title span {
             position: relative; }
-            .section_3 .wrapper .row .col a .title span::before, .section_3 .wrapper .row .col a .title span::after {
+            .section_3 .wrapper .row .col_container a .title span::before, .section_3 .wrapper .row .col_container a .title span::after {
               content: '';
               position: absolute;
               width: 100%;
@@ -607,26 +672,22 @@ ion-icon {
               background-color: #990202;
               transform: scaleX(0);
               transition: transform 0.1s linear; }
-            .section_3 .wrapper .row .col a .title span::before {
+            .section_3 .wrapper .row .col_container a .title span::before {
               bottom: -4px;
               left: 0;
               transform-origin: right; }
-            .section_3 .wrapper .row .col a .title span::after {
+            .section_3 .wrapper .row .col_container a .title span::after {
               top: -6px;
               right: 0;
               transform-origin: left; }
 
-.section_4 .splide__list {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
 footer {
-  padding: 2rem 0 1rem 0;
+  padding: 2rem 0 0 0;
   box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.8);
   background-color: #ebebeb;
   margin-top: 2rem;
-  font: 400 1rem "Chakra Petch", sans-serif; }
+  font: 400 1rem "Chakra Petch", sans-serif;
+  overflow-x: hidden; }
   footer a, footer ion-icon {
     color: black; }
   footer a:hover {
